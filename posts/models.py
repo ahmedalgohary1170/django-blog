@@ -12,7 +12,7 @@ class Post(models.Model):
     draft = models.BooleanField(default=True)
     publish_date= models.DateTimeField(default = timezone.now)
     tags = TaggableManager()
-
+    imag=models.ImageField(upload_to='posts')
 
     def __str__(self):
         return self.title
