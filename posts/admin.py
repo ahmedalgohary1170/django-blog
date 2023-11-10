@@ -1,13 +1,14 @@
 from django.contrib import admin
 
-from .models import Post
+from .models import Post,Category
 
 
 class ProductAdmin(admin.ModelAdmin):
-    list_display=['title','draft']
-    list_filter=['draft','tags']
+    list_display=['title','category','draft']
+    list_filter=['draft','category','tags']
     search_fields=['title','tags']
 
 
 
 admin.site.register(Post,ProductAdmin)
+admin.site.register(Category)
