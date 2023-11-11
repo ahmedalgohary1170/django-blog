@@ -17,6 +17,10 @@ def post_list(request):
 
 
 
-def post_detail(request):
-    pass
-
+def post_detail(request,post_id):
+    
+    date= Post.objects.get(id=post_id)
+    context={
+        'post':date
+    }
+    return render(request,'posts/post_datail.html',context)
