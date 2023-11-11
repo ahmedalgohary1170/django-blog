@@ -4,7 +4,7 @@
 
 <h4>Blog</h4>
 {% for post in ahmed %}
-    <li> {{post}} </li>
+    <li> <a href="/posts/{{post.id}}">{{post}}</a> </li>
 
     {% endfor %}
 
