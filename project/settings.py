@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'taggit',
     'posts',
     'django_extensions',
+    'django_summernote', 
     
 ]
 

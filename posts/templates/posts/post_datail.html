@@ -1,5 +1,5 @@
 <h3>{{post}}</h3>
 <p>{{post.author}}</p>
-<p>{{post.content}}</p>
+<p>{{post.content | safe}}</p>
 <p>{{post.publish_date}}</p>
 <img src= "{{ post.imag.url }}" alt="">
