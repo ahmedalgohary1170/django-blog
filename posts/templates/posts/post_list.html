@@ -3,7 +3,7 @@
 <ul>
 
 <h4>Blog</h4>
-{% for post in ahmed %}
+{% for post in object_list %}
     <li> <a href="/posts/{{post.id}}">{{post}}</a> </li>
 
     {% endfor %}

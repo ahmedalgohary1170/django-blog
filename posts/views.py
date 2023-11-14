@@ -24,3 +24,12 @@ def post_detail(request,post_id):
         'post':date
     }
     return render(request,'posts/post_datail.html',context)
+
+
+from django.views.generic import ListView , DetailView
+
+class PostList(ListView):
+    model =Post
+
+class PostDetail(DetailView):
+    model = Post
