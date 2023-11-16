@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Post
-
+from .forms import PostForm
 
 
 
@@ -24,6 +24,17 @@ def post_detail(request,post_id):
         'post':date
     }
     return render(request,'posts/post_datail.html',context)
+
+
+def create_post(request):
+    if request.method == 'POST':
+        form =PostForm(request.POST,request.FILES)
+        if form.is_valid():
+            form.save()
+    else:
+        form = PostForm()
+    
+    return render(request,'posts/new.html',{'form':form})
 
 
 from django.views.generic import ListView , DetailView
