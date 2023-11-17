@@ -69,14 +69,20 @@ class PostDetail(DetailView):
     model = Post
 
 
-class Add_post(CreateView):
+class AddPost(CreateView):
     model= Post
     fields='__all__'
     success_url='/posts/'
 
 
-class Edit_post(UpdateView):
+class EditPost(UpdateView):
     model= Post
     fields='__all__'
     success_url='/posts/'
     template_name ='posts/edit.html'
+
+
+
+class DeletePost(DeleteView):
+    model= Post
+    success_url='/posts/'
