@@ -30,7 +30,9 @@ def create_post(request):
     if request.method == 'POST':
         form =PostForm(request.POST,request.FILES)
         if form.is_valid():
-            form.save()
+            myform=form.save(commit=False)
+            myform.author = request.user
+            myform.save()
             return redirect('/posts/')
     else:
         form = PostForm()
