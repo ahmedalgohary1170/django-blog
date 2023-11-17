@@ -60,10 +60,16 @@ def delete_post(request,pk):
     post.delete()
     return redirect('/posts/')
 
-from django.views.generic import ListView , DetailView
+from django.views.generic import ListView , DetailView,UpdateView,CreateView,DeleteView
 
 class PostList(ListView):
     model =Post
 
 class PostDetail(DetailView):
     model = Post
+
+
+class Add_post(CreateView):
+    model= Post
+    fields='__all__'
+    success_url='/posts/'

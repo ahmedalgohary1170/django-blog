@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path ,include
 from django.conf import settings
 from django.conf.urls.static import static
-from posts.views import post_list,post_detail,PostList,PostDetail,create_post,edit_post,delete_post
+from posts.views import post_list,post_detail,PostList,PostDetail,create_post,Add_post,edit_post,delete_post
 
 
 
@@ -25,7 +25,7 @@ from posts.views import post_list,post_detail,PostList,PostDetail,create_post,ed
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('posts/',PostList.as_view()),
-    path('posts/new',create_post),
+    path('posts/new',Add_post.as_view()),
     path('posts/<int:pk>',PostDetail.as_view()),
     path('posts/<int:pk>/edit',edit_post),
     path('posts/<int:pk>/delete',delete_post),
