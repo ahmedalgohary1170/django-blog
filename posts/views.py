@@ -73,3 +73,10 @@ class Add_post(CreateView):
     model= Post
     fields='__all__'
     success_url='/posts/'
+
+
+class Edit_post(UpdateView):
+    model= Post
+    fields='__all__'
+    success_url='/posts/'
+    template_name ='posts/edit.html'
