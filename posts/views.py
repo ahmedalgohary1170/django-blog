@@ -11,15 +11,15 @@ from .forms import PostForm
 def post_list(request):
     date= Post.objects.all()
     context={
-        'ahmed':date
+        'object_list':date
     }
     return render(request,'posts/post_list.html',context)
 
 
 
-def post_detail(request,post_id):
+def post_detail(request,pk):
     
-    date= Post.objects.get(id=post_id)
+    date= Post.objects.get(id=pk)
     context={
         'post':date
     }
@@ -37,7 +37,7 @@ def create_post(request):
     else:
         form = PostForm()
     
-    return render(request,'posts/new.html',{'form':form})
+    return render(request,'posts/post_form.html',{'form':form})
 
 
 def edit_post(request,pk):

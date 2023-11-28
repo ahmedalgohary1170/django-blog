@@ -24,11 +24,11 @@ from posts.views import post_list,post_detail,PostList,PostDetail,create_post,Ad
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('posts/',PostList.as_view()),
+    path('posts/',post_list),
     path('posts/new',AddPost.as_view()),
-    path('posts/<int:pk>',PostDetail.as_view()),
-    path('posts/<int:pk>/edit',EditPost.as_view()),
-    path('posts/<int:pk>/delete',DeletePost.as_view()),
+    path('posts/<int:pk>',post_detail),
+    path('posts/<int:pk>/edit',edit_post),
+    path('posts/<int:pk>/delete',delete_post),
     path('summernote/', include('django_summernote.urls')),
 ]
 
