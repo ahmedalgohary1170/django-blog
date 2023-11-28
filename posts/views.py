@@ -1,5 +1,5 @@
 from django.shortcuts import render ,redirect
-from .models import Post
+from .models import Post,Comment
 from .forms import PostForm 
 
 
@@ -18,10 +18,12 @@ def post_list(request):
 
 
 def post_detail(request,pk):
-    
     date= Post.objects.get(id=pk)
+    coments=Comment.objects.filter(post=date)
     context={
-        'post':date
+        'post':date,
+        'coments': coments
+
     }
     return render(request,'posts/post_datail.html',context)
 
