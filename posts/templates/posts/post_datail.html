@@ -1,3 +1,4 @@
+{% load django_bootstrap5 %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -26,11 +27,12 @@
                     <li>NO Comment In This Post</li>
                 {% endfor %}
             </ul>
+
             <h4>Add New Commint</h4>
             <form  method="post">
               {% csrf_token %}
-              {{form}}
-              <input type="submit" value="add commint">
+              {% bootstrap_form form %}
+              {% bootstrap_button button_type="submit" content="add comment" %}
             </form>
         </div>
 
