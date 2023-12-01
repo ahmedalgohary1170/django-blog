@@ -29,7 +29,7 @@
             </ul>
 
             <h4>Add New Commint</h4>
-            <form  method="post">
+            <form method="post">
               {% csrf_token %}
               {% bootstrap_form form %}
               {% bootstrap_button button_type="submit" content="add comment" %}

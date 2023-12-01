@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'django_summernote', 
     "django_bootstrap5",
+    'rest_framework',
     
 ]
 
