@@ -18,7 +18,7 @@ from django.urls import path ,include
 from django.conf import settings
 from django.conf.urls.static import static
 from posts.views import post_list,post_detail,PostList,PostDetail,create_post,AddPost,EditPost,DeletePost,edit_post,delete_post
-from posts.api import post_list_api,post_dateil_api
+from posts.api import PostListApi,PostDetailApi
 
 
 
@@ -35,8 +35,8 @@ urlpatterns = [
 
 
 
-    path('posts/api', post_list_api),
-    path('posts/api/<int:id>',post_dateil_api)
+    path('posts/api', PostListApi.as_view()),
+    path('posts/api/<int:pk>',PostDetailApi.as_view())
 ]
 
 
