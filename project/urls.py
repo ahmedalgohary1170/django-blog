@@ -18,7 +18,7 @@ from django.urls import path ,include
 from django.conf import settings
 from django.conf.urls.static import static
 from posts.views import post_list,post_detail,PostList,PostDetail,create_post,AddPost,EditPost,DeletePost,edit_post,delete_post
-from posts.api import post_list_api
+from posts.api import post_list_api,post_dateil_api
 
 
 
@@ -30,7 +30,13 @@ urlpatterns = [
     path('posts/<int:pk>/edit',edit_post),
     path('posts/<int:pk>/delete',delete_post),
     path('summernote/', include('django_summernote.urls')),
+
+
+
+
+
     path('posts/api', post_list_api),
+    path('posts/api/<int:id>',post_dateil_api)
 ]
 
 
