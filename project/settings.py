@@ -38,12 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',
-    'posts',
     'django_extensions',
     'django_summernote', 
     "django_bootstrap5",
     'rest_framework',
     'drf_yasg',
+    'django_filters',
+
+    'posts',
     
 ]
 
@@ -58,6 +60,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'project.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
 
 TEMPLATES = [
     {

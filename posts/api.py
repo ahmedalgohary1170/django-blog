@@ -17,11 +17,21 @@ from .serializers import Postserializer
 #     return Response({'date':date})
 
 
+
 from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework import filters
+
 
 class PostListApi(generics.ListCreateAPIView):
     queryset=Post.objects.all()
     serializer_class=Postserializer
+    filter_backends = [DjangoFilterBackend,filters.SearchFilter,filters.OrderingFilter]
+    search_fields = ['title']
+    filterset_fields = ['author', 'title']
+    ordering_fields = ['publish_date']
+
+
 
 class PostDetailApi(generics.RetrieveUpdateDestroyAPIView):
     queryset=Post.objects.all()
